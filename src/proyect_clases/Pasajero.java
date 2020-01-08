@@ -2,7 +2,7 @@ package proyect_clases;
 
 public class Pasajero {
 
-    private String  id_pasajero;
+  //  private String  id_pasajero;
     private String  nombre_pasajero;
     private String  apellido_pasajero;
     private String  tipo_pasajero;
@@ -13,8 +13,7 @@ public class Pasajero {
     
     }
 
-    public Pasajero(String id_pasajero, String nombre_pasajero, String apellido_pasajero, String tipo_pasajero, int cedula_pasajero, int edad_pasajero) {
-        this.id_pasajero        = id_pasajero;
+    public Pasajero( String nombre_pasajero, String apellido_pasajero, String tipo_pasajero, int cedula_pasajero, int edad_pasajero) {
         this.nombre_pasajero    = nombre_pasajero;
         this.apellido_pasajero  = apellido_pasajero;
         this.tipo_pasajero      = tipo_pasajero;
@@ -22,14 +21,7 @@ public class Pasajero {
         this.edad_pasajero      = edad_pasajero;
     }
 
-    public String getId_pasajero() {
-        return id_pasajero;
-    }
-
-    public void setId_pasajero(String id_pasajero) {
-        this.id_pasajero = id_pasajero;
-    }
-    
+   
     public String getNombre_pasajero() {
         return nombre_pasajero;
     }
@@ -46,12 +38,12 @@ public class Pasajero {
         this.apellido_pasajero = apellido_pasajero;
     }
 
-    public String getTipo_pasajero() {
+   public String getTipo_pasajero() {
         return tipo_pasajero;
     }
 
     public void setTipo_pasajero(String tipo_pasajero) {
-        this.tipo_pasajero = tipo_pasajero;
+        this. tipo_pasajero = tipo_pasajero;
     }
 
     public int getCedula_pasajero() {

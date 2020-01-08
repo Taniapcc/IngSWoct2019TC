@@ -12,7 +12,6 @@ import proyect_clases.Pasajero;
 public class MetodoPasajero {
     
     Vector vPrincipal = new Vector();
-        
     //guarda datos en el vector
     public void guardarPasajero(Pasajero unPasajero) {
         vPrincipal.addElement(unPasajero);
@@ -20,12 +19,12 @@ public class MetodoPasajero {
     
     //guardar archivo txt
     public void guardarArchivoPasajero(Pasajero pasajero){
-        
-        try {
-            FileWriter fw = new FileWriter ("C:\\Pasajero.txt", true);
+              
+           try {
+            FileWriter fw = new FileWriter ("..\\Pasajero.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
-            pw.print(pasajero.getNombre_pasajero());
+            pw.print(pasajero.getNombre_pasajero());                 
             pw.print("|"+pasajero.getApellido_pasajero());
             pw.print("|"+pasajero.getTipo_pasajero());
             pw.print("|"+pasajero.getCedula_pasajero());
@@ -35,6 +34,8 @@ public class MetodoPasajero {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+  
     
     //mostrar los datos en el jtable
     public DefaultTableModel listaPasajero(){
@@ -49,7 +50,7 @@ public class MetodoPasajero {
         DefaultTableModel mdlTablaP = new DefaultTableModel(cabeceras,0);
         try {
      
-            FileReader fr = new FileReader("C:\\Pasajero.txt");
+            FileReader fr = new FileReader(".\\Pasajero.txt");
             BufferedReader br = new BufferedReader(fr);
             String d;
 
@@ -70,7 +71,7 @@ public class MetodoPasajero {
   
     public Vector BuscarPasajero(String cedulaP){
         try {
-            FileReader fr = new FileReader("C:\\Pasajero.txt");
+            FileReader fr = new FileReader(".\\Pasajero.txt");
             BufferedReader br = new BufferedReader(fr);
             String d;
             while ((d=br.readLine())!=null){
@@ -81,7 +82,7 @@ public class MetodoPasajero {
                     }
                         String a = x.elementAt(3).toString();
                         if(a.equals(cedulaP)){
-                            
+                          
                             vPrincipal=x;
                             System.out.println(vPrincipal);     
                 }

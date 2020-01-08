@@ -244,6 +244,7 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         mdlTablaP = new DefaultTableModel();
+              
       
         String nombre_p = txt_p_nombre.getText();
         String apellido_p = txt_p_apellido.getText();
@@ -251,15 +252,19 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         int cedula_p = Integer.parseInt(txt_p_cedula.getText());
         int edad_p = Integer.parseInt(txt_p_edad.getText());
         
-        if( nombre_p.isEmpty()){JOptionPane.showMessageDialog(null, "Ingrese Nombre");}
-        
+        //System.out.print(nombre_p+" "+apellido_p+"  "+pasajero_p);
+        if( nombre_p.isEmpty()){            
+            JOptionPane.showMessageDialog(null, "Ingrese Nombre");}
+        System.out.print(nombre_p+" "+apellido_p+"  "+pasajero_p);
+      
         pasajero.setNombre_pasajero(nombre_p);
         pasajero.setApellido_pasajero(apellido_p);
         pasajero.setTipo_pasajero(pasajero_p);
         pasajero.setCedula_pasajero(cedula_p);
         pasajero.setEdad_pasajero(edad_p);
+        
         metodos.guardarPasajero(pasajero);
-        metodos.guardarArchivoPasajero(pasajero);
+        metodos.guardarArchivoPasajero(pasajero);        
         table_pasajero.setModel(metodos.listaPasajero());
     }//GEN-LAST:event_btn_p_guardarActionPerformed
 

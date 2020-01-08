@@ -218,7 +218,7 @@ public class RegistroDePasajero extends javax.swing.JFrame {
     }
     
     private void btn_p_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_guardarActionPerformed
-        // TODO add your handling code here:
+       // TODO add your handling code here:
         mdlTabla = new DefaultTableModel();
         
         String nombre_p = txt_p_nombre.getText();
@@ -238,9 +238,10 @@ public class RegistroDePasajero extends javax.swing.JFrame {
         pasajero.setCedula_pasajero(cedula_p);
         pasajero.setEdad_pasajero(edad_p);
         
+        
         metodos.guardar(pasajero);
         metodos.guardarArchivo(pasajero);
-                
+        table_pasajero.setModel(metodos.listaPasajero());       
     }//GEN-LAST:event_btn_p_guardarActionPerformed
 
     private void btn_p_mostarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_mostarActionPerformed

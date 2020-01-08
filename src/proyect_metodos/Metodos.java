@@ -19,7 +19,7 @@ public class Metodos {
     //guardar archivo txt
     public void guardarArchivo(Pasajero pasajero){
         try {
-            FileWriter fw = new FileWriter ("C:\\Users\\HackWhite\\Desktop\\Pasajero.txt", true);
+            FileWriter fw = new FileWriter (".\\Pasajero.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             pw.print(pasajero.getNombre_pasajero());
@@ -45,7 +45,7 @@ public class Metodos {
         //Crear vectos con nombre apellido tipo de pasajero cedula edad
         DefaultTableModel mdlTabla = new DefaultTableModel(cabeceras,0);
         try {
-            FileReader fr = new FileReader("C:\\Users\\HackWhite\\Desktop\\Pasajero.txt");
+            FileReader fr = new FileReader(".\\Pasajero.txt");
             BufferedReader br = new BufferedReader(fr);
             String d;
             while ((d=br.readLine())!=null){
