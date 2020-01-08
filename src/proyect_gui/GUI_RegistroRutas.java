@@ -16,7 +16,7 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
     public GUI_RegistroRutas() {
         initComponents();
         
-        vCabeceras.addElement("ID");
+       vCabeceras.addElement("ID");
         vCabeceras.addElement("RUTA");
         vCabeceras.addElement("ORIGEN");
         vCabeceras.addElement("DESTINO");

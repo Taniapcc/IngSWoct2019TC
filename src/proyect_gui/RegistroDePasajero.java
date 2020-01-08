@@ -24,6 +24,7 @@ public class RegistroDePasajero extends javax.swing.JFrame {
         vCabeceras.addElement("EDAD");
         mdlTabla = new DefaultTableModel(vCabeceras,0);
         table_pasajero.setModel(mdlTabla);
+        table_pasajero.setModel(metodos.listaPasajero());             
     }
    
     @SuppressWarnings("unchecked")
