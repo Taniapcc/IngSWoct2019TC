@@ -69,6 +69,11 @@ public class RegistroDePasajero extends javax.swing.JFrame {
                 txt_p_nombreActionPerformed(evt);
             }
         });
+        txt_p_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_nombreKeyTyped(evt);
+            }
+        });
 
         txt_p_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -313,7 +318,7 @@ public class RegistroDePasajero extends javax.swing.JFrame {
 
     private void txt_p_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_p_nombreActionPerformed
         // TODO add your handling code here:
-        validar.ValidarCaracteres(evt);
+       
     }//GEN-LAST:event_txt_p_nombreActionPerformed
 
     private void txt_p_apellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_apellidoKeyTyped
@@ -330,6 +335,11 @@ public class RegistroDePasajero extends javax.swing.JFrame {
         // TODO add your handling code here:
         validar.ValidarNumeros(evt);
     }//GEN-LAST:event_txt_p_edadKeyTyped
+
+    private void txt_p_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_nombreKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_p_nombreKeyTyped
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_p_guardar;
