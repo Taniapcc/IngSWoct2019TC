@@ -10,6 +10,13 @@ import proyect_clases.Pasajero;
 public class Metodos {
     
     Vector vPrincipal = new Vector();
+    private ArrayList<Object> a = new ArrayList<Object>();
+    
+    public Metodos(){}
+    
+    public Metodos(ArrayList<Object> a){
+        this.a = a;
+    }
     
     //guarda datos en el vector
     public void guardar(Pasajero unPasajero) {
@@ -61,6 +68,10 @@ public class Metodos {
         JOptionPane.showMessageDialog(null, e);
         }
         return mdlTabla;
+    }
+    
+     public void eliminarRegistro(int i){
+        this.a.remove(i);
     }
 
 }

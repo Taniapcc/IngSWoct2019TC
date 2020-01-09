@@ -16,16 +16,17 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
     Usuario usuario = new Usuario();
     MetodoUsuario metodos = new MetodoUsuario ();
-    MetodoUsuario buscar = new MetodoUsuario ();
-    MetodoUsuario eliminar = new MetodoUsuario();
+    //MetodoUsuario buscar = new MetodoUsuario ();
+   // MetodoUsuario eliminar = new MetodoUsuario();
     DefaultTableModel mdlTablaU;
     Vector vCabeceras = new Vector();
     Vector v = new Vector();
     Validaciones validar=new Validaciones ();
-    
+    proyect_metodos.Metodos rp;
+     
     public GUI_RegistroUsuarios() {
         initComponents();
-        
+        rp = new proyect_metodos.Metodos();
         vCabeceras.addElement("ID");
         vCabeceras.addElement("NOMBRE");
         vCabeceras.addElement("APELLIDO");
@@ -85,6 +86,11 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        table_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_usuarioMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(table_usuario);
@@ -320,6 +326,8 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
         mdlTablaU = new DefaultTableModel();
         
+        
+        
         int id_u = Integer.parseInt(txt_u_id.getText());
         String nombre_u = txt_u_nombre.getText();
         String apellido_u = txt_u_apellido.getText();
@@ -353,7 +361,7 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
     private void btn_u_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_u_eliminarActionPerformed
        
-
+           
         
     }//GEN-LAST:event_btn_u_eliminarActionPerformed
 
@@ -386,6 +394,23 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
          validar.ValidarNumeros(evt);
     }//GEN-LAST:event_txt_u_id_buscaKeyTyped
+
+    private void table_usuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_usuarioMouseClicked
+        // TODO add your handling code here:
+        int row = (int)  table_usuario.getSelectedRow();
+        String id_u = (String) table_usuario.getModel().getValueAt(row, 0);
+        String nombre_u = (String) table_usuario.getModel().getValueAt(row, 1);
+        String apellido_u = (String) table_usuario.getModel().getValueAt(row, 2);
+        String user_u = (String) table_usuario.getModel().getValueAt(row, 3);
+        String password_u = (String) table_usuario.getModel().getValueAt(row, 4);
+        
+       txt_u_id.setText(id_u);
+        txt_u_nombre.setText(nombre_u);
+        txt_u_apellido.setText(apellido_u);
+        txt_u_user.setText(user_u);
+        txt_u_password.setText(password_u);
+        
+    }//GEN-LAST:event_table_usuarioMouseClicked
 
     /**
      * @param args the command line arguments

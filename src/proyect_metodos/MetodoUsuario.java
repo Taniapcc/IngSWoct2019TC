@@ -23,6 +23,8 @@ public class MetodoUsuario {
     }
 
     public void guardarArchivoUsuario(Usuario usuario){
+        
+        
         try {
             FileWriter fw = new FileWriter (".\\Usuario.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -89,13 +91,13 @@ public class MetodoUsuario {
         return v1;
     }
     
-      public void EditarRutas() {
+      public void EditarUsuario() {
            
         //FALTA
     }
     
     
-    public void EliminarRutas() {
+    public void EliminarUsuario() {
            
         //FALTA
     }

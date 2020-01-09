@@ -35,8 +35,7 @@ public class MetodoPasajero {
         }
     }
     
-  
-    
+      
     //mostrar los datos en el jtable
     public DefaultTableModel listaPasajero(){
         Vector cabeceras = new Vector();
