@@ -154,12 +154,24 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_p_nombre">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_p_nombreKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_p_apellido">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_p_apellidoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_p_cedula">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_p_cedulaKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_p_edad">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_p_edadKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_p_pasajero">
     </Component>

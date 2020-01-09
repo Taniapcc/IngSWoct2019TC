@@ -86,6 +86,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPanel1KeyTyped"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -175,6 +178,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_u_nombre">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_u_nombreKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -182,6 +188,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_u_apellido">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_u_apellidoKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
@@ -198,6 +207,9 @@
         <Component class="javax.swing.JTextField" name="txt_u_password">
         </Component>
         <Component class="javax.swing.JTextField" name="txt_u_id">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_u_idKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -246,6 +258,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_u_id_busca">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_u_id_buscaKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

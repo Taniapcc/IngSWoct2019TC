@@ -1,5 +1,6 @@
 package proyect_gui;
 
+
 import java.awt.Component;
 import static java.awt.SystemColor.control;
 import java.io.BufferedWriter;
@@ -12,6 +13,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import proyect_metodos.MetodoPasajero;
 import proyect_clases.Pasajero;
+import java.awt.event.KeyEvent;
+import Validaciones.Validaciones;
 
 public class GUI_RegistroPasajeros extends javax.swing.JFrame {
 
@@ -19,6 +22,7 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
     MetodoPasajero metodos = new MetodoPasajero();
     DefaultTableModel mdlTablaP;
     Vector vCabeceras = new Vector();
+    Validaciones validar=new Validaciones ();
     
     public GUI_RegistroPasajeros() {
         initComponents();
@@ -67,6 +71,30 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         jLabel4.setText("Edad:");
 
         jLabel5.setText("Tipo Pasajero");
+
+        txt_p_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_nombreKeyTyped(evt);
+            }
+        });
+
+        txt_p_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_apellidoKeyTyped(evt);
+            }
+        });
+
+        txt_p_cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_cedulaKeyTyped(evt);
+            }
+        });
+
+        txt_p_edad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_edadKeyTyped(evt);
+            }
+        });
 
         table_pasajero.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -270,9 +298,11 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
 
     private void btn_p_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_salirActionPerformed
         // TODO add your handling code here:
-        GUI_Principal b = new GUI_Principal();
+       GUI_Principal b = new GUI_Principal();
         b.setVisible(true);
         dispose();
+        
+        
     }//GEN-LAST:event_btn_p_salirActionPerformed
 
     private void btn_p_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_eliminarActionPerformed
@@ -292,6 +322,27 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         // Carga los datos del archivo de texto con la base de datos de pasajeros:
         table_pasajero.setModel(metodos.listaPasajero());
     }//GEN-LAST:event_btn_p_actializarActionPerformed
+
+    private void txt_p_edadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_edadKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+       
+    }//GEN-LAST:event_txt_p_edadKeyTyped
+
+    private void txt_p_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_nombreKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_p_nombreKeyTyped
+
+    private void txt_p_apellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_apellidoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_p_apellidoKeyTyped
+
+    private void txt_p_cedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_cedulaKeyTyped
+        // TODO add your handling code here:
+        Validaciones validar=new Validaciones ();
+    }//GEN-LAST:event_txt_p_cedulaKeyTyped
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_p_actializar;

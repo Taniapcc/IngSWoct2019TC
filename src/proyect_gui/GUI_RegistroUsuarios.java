@@ -9,6 +9,8 @@ import javax.swing.table.DefaultTableModel;
 import proyect_clases.Usuario;
 import proyect_metodos.MetodoUsuario;
 import proyect_metodos.MetodoBoleto;
+import java.awt.event.KeyEvent;
+import Validaciones.Validaciones;
 
 public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
@@ -19,6 +21,7 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
     DefaultTableModel mdlTablaU;
     Vector vCabeceras = new Vector();
     Vector v = new Vector();
+    Validaciones validar=new Validaciones ();
     
     public GUI_RegistroUsuarios() {
         initComponents();
@@ -86,6 +89,12 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(table_usuario);
 
+        jPanel1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPanel1KeyTyped(evt);
+            }
+        });
+
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("INGRESO DE USUARIOS:");
 
@@ -93,11 +102,29 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre :");
 
+        txt_u_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_u_nombreKeyTyped(evt);
+            }
+        });
+
         jLabel2.setText("Apellido :");
+
+        txt_u_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_u_apellidoKeyTyped(evt);
+            }
+        });
 
         jLabel4.setText("Username :");
 
         jLabel3.setText("Clave :");
+
+        txt_u_id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_u_idKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -157,6 +184,12 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         jLabel7.setText("BUSQUEDA Y EDITAR DE  USUARIOS:");
 
         jLabel8.setText("Id Usuario :");
+
+        txt_u_id_busca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_u_id_buscaKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -329,6 +362,30 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_u_editarActionPerformed
+
+    private void jPanel1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1KeyTyped
+
+    private void txt_u_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_u_nombreKeyTyped
+        // TODO add your handling code here:
+         validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_u_nombreKeyTyped
+
+    private void txt_u_apellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_u_apellidoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_u_apellidoKeyTyped
+
+    private void txt_u_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_u_idKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_u_idKeyTyped
+
+    private void txt_u_id_buscaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_u_id_buscaKeyTyped
+        // TODO add your handling code here:
+         validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_u_id_buscaKeyTyped
 
     /**
      * @param args the command line arguments

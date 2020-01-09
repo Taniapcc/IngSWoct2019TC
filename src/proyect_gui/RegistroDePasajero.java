@@ -5,6 +5,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import proyect_metodos.Metodos;
 import proyect_clases.Pasajero;
+import java.awt.event.KeyEvent;
+import Validaciones.Validaciones;
 
 public class RegistroDePasajero extends javax.swing.JFrame {
 
@@ -12,6 +14,7 @@ public class RegistroDePasajero extends javax.swing.JFrame {
     Metodos metodos = new Metodos();
     DefaultTableModel mdlTabla;
     Vector vCabeceras = new Vector();
+    Validaciones validar=new Validaciones ();
     
     
     public RegistroDePasajero() {
@@ -61,6 +64,41 @@ public class RegistroDePasajero extends javax.swing.JFrame {
 
         jLabel5.setText("Pasajero");
 
+        txt_p_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_p_nombreActionPerformed(evt);
+            }
+        });
+
+        txt_p_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_apellidoKeyTyped(evt);
+            }
+        });
+
+        txt_p_cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_cedulaKeyTyped(evt);
+            }
+        });
+
+        txt_p_edad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_p_edadActionPerformed(evt);
+            }
+        });
+        txt_p_edad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_edadKeyTyped(evt);
+            }
+        });
+
+        txt_p_pasajero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_p_pasajeroKeyTyped(evt);
+            }
+        });
+
         table_pasajero.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -97,6 +135,11 @@ public class RegistroDePasajero extends javax.swing.JFrame {
         });
 
         btn_p_salir.setText("Salir");
+        btn_p_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_p_salirActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Nuevo");
 
@@ -250,6 +293,43 @@ public class RegistroDePasajero extends javax.swing.JFrame {
         table_pasajero.setModel(metodos.listaPasajero());
         
     }//GEN-LAST:event_btn_p_mostarActionPerformed
+
+    private void txt_p_edadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_p_edadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_p_edadActionPerformed
+
+    private void txt_p_cedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_cedulaKeyTyped
+        // TODO add your handling code here:
+         char c = evt.getKeyChar();
+        if (c <'0' || c >'9' ) evt.consume();
+    }//GEN-LAST:event_txt_p_cedulaKeyTyped
+
+    private void btn_p_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_salirActionPerformed
+        // TODO add your handling code here:
+        GUI_Principal b = new GUI_Principal();
+        b.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_p_salirActionPerformed
+
+    private void txt_p_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_p_nombreActionPerformed
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_p_nombreActionPerformed
+
+    private void txt_p_apellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_apellidoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_p_apellidoKeyTyped
+
+    private void txt_p_pasajeroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_pasajeroKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_p_pasajeroKeyTyped
+
+    private void txt_p_edadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_p_edadKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_p_edadKeyTyped
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_p_guardar;

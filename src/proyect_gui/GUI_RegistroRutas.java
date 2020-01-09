@@ -1,14 +1,18 @@
 package proyect_gui;
 
+
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import java.util.Date;
 import proyect_clases.Rutas;
 import proyect_metodos.MetodoRutas;
+import java.awt.event.KeyEvent;
+import Validaciones.Validaciones;
 
 public class GUI_RegistroRutas extends javax.swing.JFrame {
 
     Rutas ruta = new Rutas();
+    Validaciones validar=new Validaciones ();
     MetodoRutas metodos = new MetodoRutas();
     DefaultTableModel mdlTablaR;
     Vector vCabeceras = new Vector();
@@ -99,9 +103,33 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
 
         jLabel3.setText("Costo Ruta");
 
+        txt_r_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_r_nombreKeyTyped(evt);
+            }
+        });
+
         jLabel4.setText("Ruta");
 
+        txt_r_id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_r_idKeyTyped(evt);
+            }
+        });
+
         jLabel5.setText("Origen");
+
+        txt_r_origen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_r_origenKeyTyped(evt);
+            }
+        });
+
+        txt_r_destino.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_r_destinoKeyTyped(evt);
+            }
+        });
 
         jLabel2.setText("Destino");
 
@@ -343,6 +371,28 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         // Carga los datos del archivo de texto con la base de datos de pasajeros:
         table_rutas.setModel(metodos.listaRutas());
     }//GEN-LAST:event_btn_r_actializarActionPerformed
+
+    private void txt_r_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_r_idKeyTyped
+        // TODO add your handling code here:
+       validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_r_idKeyTyped
+
+    private void txt_r_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_r_nombreKeyTyped
+        // TODO add your handling code here:
+         validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_r_nombreKeyTyped
+
+    
+    private void txt_r_origenKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_r_origenKeyTyped
+        // TODO add your handling code here:
+         validar.ValidarCaracteres(evt);
+        
+    }//GEN-LAST:event_txt_r_origenKeyTyped
+
+    private void txt_r_destinoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_r_destinoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_r_destinoKeyTyped
 
     /**
      * @param args the command line arguments
