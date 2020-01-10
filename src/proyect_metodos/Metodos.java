@@ -70,7 +70,11 @@ public class Metodos {
         return mdlTabla;
     }
     
-     public void eliminarRegistro(int i){
+    public int cantidadRegistro(){
+        return this.a.size();
+    }
+    
+    public void eliminarRegistro(int i){
         this.a.remove(i);
     }
 

@@ -12,6 +12,8 @@ public class Rutas {
     private String fecha_Ruta;
     private String hora_Ruta;
     private String costo_Ruta;
+    Date fechaActual = new Date();
+  
 
     public Rutas(){
     
@@ -82,6 +84,8 @@ public class Rutas {
     public void setCosto_Ruta(String costo_Ruta) {
         this.costo_Ruta = costo_Ruta;
     }
+    
+ 
 
    
 }

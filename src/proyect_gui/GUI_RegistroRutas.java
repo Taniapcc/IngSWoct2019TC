@@ -6,8 +6,12 @@ import javax.swing.table.DefaultTableModel;
 import java.util.Date;
 import proyect_clases.Rutas;
 import proyect_metodos.MetodoRutas;
-import java.awt.event.KeyEvent;
+//import java.awt.event.KeyEvent;
 import Validaciones.Validaciones;
+//import java.io.FileWriter;
+//import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+//import javax.swing.JOptionPane;
 
 public class GUI_RegistroRutas extends javax.swing.JFrame {
 
@@ -16,6 +20,9 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
     MetodoRutas metodos = new MetodoRutas();
     DefaultTableModel mdlTablaR;
     Vector vCabeceras = new Vector();
+    private String ruta_txt = ".\\Rutas.txt"; 
+    
+   
     
     public GUI_RegistroRutas() {
         initComponents();
@@ -27,6 +34,8 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         vCabeceras.addElement("COSTO");
         vCabeceras.addElement("HORA");
         vCabeceras.addElement("FECHA");
+        txt_r_fecha.setText(fechaActual());
+        txt_r_hora.setText(horaActual());
         mdlTablaR = new DefaultTableModel(vCabeceras,0);
         table_rutas.setModel(mdlTablaR);
         table_rutas.setModel(metodos.listaRutas());
@@ -130,6 +139,11 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
             }
         });
 
+        txt_r_destino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_r_destinoActionPerformed(evt);
+            }
+        });
         txt_r_destino.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_r_destinoKeyTyped(evt);
@@ -137,6 +151,12 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         });
 
         jLabel2.setText("Destino");
+
+        txt_r_fecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_r_fechaActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("Fecha");
 
@@ -258,14 +278,14 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
             }
         });
 
-        btn_r_eliminar.setText("Editar");
+        btn_r_eliminar.setText("Eliminar");
         btn_r_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_r_eliminarActionPerformed(evt);
             }
         });
 
-        btn_r_actializar.setText("Eliminar");
+        btn_r_actializar.setText("Editar");
         btn_r_actializar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_r_actializarActionPerformed(evt);
@@ -322,6 +342,8 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btn_r_actializar.getAccessibleContext().setAccessibleName("Editar");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -329,7 +351,6 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         mdlTablaR = new DefaultTableModel();
-
         int id_r = Integer.parseInt(txt_r_id.getText());
         String nombre_r = txt_r_nombre.getText();
         String origen_r = txt_r_origen.getText();
@@ -350,6 +371,20 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         table_rutas.setModel(metodos.listaRutas());
     }//GEN-LAST:event_btn_r_guardarActionPerformed
 
+    public static String fechaActual(){
+        Date fecha = new Date();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/YYYY");
+        return formatoFecha.format(fecha);
+        }
+     
+     public static String horaActual(){
+        Date fecha = new Date();
+        SimpleDateFormat formatoHora = new SimpleDateFormat("HH:MM");
+        return formatoHora.format(fecha);
+        }
+  
+    
+ 
     private void btn_r_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_r_salirActionPerformed
         // TODO add your handling code here:
         GUI_Principal b = new GUI_Principal();
@@ -366,15 +401,21 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         txt_r_costo.setText("");
         txt_r_hora.setText("");
         txt_r_fecha.setText("");
+        txt_r_fecha.setText(fechaActual());
+        txt_r_hora.setText(horaActual());
+        
     }//GEN-LAST:event_btn_r_nuevoActionPerformed
 
     private void btn_r_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_r_eliminarActionPerformed
         // Boton eliminar pasajeros en tabla:
+        
+       
     }//GEN-LAST:event_btn_r_eliminarActionPerformed
 
     private void btn_r_actializarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_r_actializarActionPerformed
         // Carga los datos del archivo de texto con la base de datos de pasajeros:
         table_rutas.setModel(metodos.listaRutas());
+        
     }//GEN-LAST:event_btn_r_actializarActionPerformed
 
     private void txt_r_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_r_idKeyTyped
@@ -411,7 +452,7 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         String hora_r = (String) table_rutas.getModel().getValueAt(row, 5);
         String fecha_r = (String) table_rutas.getModel().getValueAt(row, 6);
         
-         txt_r_id.setText(id_r);
+        txt_r_id.setText(id_r);
         txt_r_nombre.setText(nombre_r);
         txt_r_origen.setText(origen_r);
         txt_r_destino.setText(destino_r);
@@ -422,6 +463,14 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_table_rutasMouseClicked
+
+    private void txt_r_destinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_r_destinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_r_destinoActionPerformed
+
+    private void txt_r_fechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_r_fechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_r_fechaActionPerformed
 
     /**
      * @param args the command line arguments

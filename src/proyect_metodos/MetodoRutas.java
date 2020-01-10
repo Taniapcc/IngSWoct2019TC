@@ -6,25 +6,37 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.StringTokenizer;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import proyect_clases.Boleto;
 import proyect_clases.Rutas;
 
 public class MetodoRutas {
     
     Vector vPrincipal = new Vector();
+    private String mi_Txt =".//Rutas.txt";
     
+    
+    
+   public MetodoRutas(){
+       
+   
+   }
+      
     //guarda datos en el vector
     public void guardarRutas(Rutas unaRuta) {
         vPrincipal.addElement(unaRuta);
     }
     //guardar archivo txt
+   
+    
+    
     public void guardarArchivoRutas(Rutas rutas){
         try {
-            FileWriter fw = new FileWriter (".\\Rutas.txt", true);
+            FileWriter fw = new FileWriter (mi_Txt, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             pw.print(rutas.getId_Ruta());
@@ -52,7 +64,7 @@ public class MetodoRutas {
         //Crear vector con nombre apellido pasajero cedula edad
         DefaultTableModel mdlTablaR = new DefaultTableModel(cabeceras,0);
         try {
-            FileReader fr = new FileReader(".\\Rutas.txt");
+            FileReader fr = new FileReader(mi_Txt);
             BufferedReader br = new BufferedReader(fr);
             String d;
             while ((d=br.readLine())!=null){
@@ -73,7 +85,7 @@ public class MetodoRutas {
         
                
         try {
-            FileReader fr = new FileReader(".\\Rutas.txt");
+            FileReader fr = new FileReader(mi_Txt);
             BufferedReader br = new BufferedReader(fr);
             String d;
             while ((d=br.readLine())!=null){
@@ -103,10 +115,13 @@ public class MetodoRutas {
     }
     
     
-    public void EliminarRutas() {
-           
-        //FALTA
-    }
+      
+    
+    
+   
+    
+   
+    
     
     
 }
