@@ -70,6 +70,8 @@ public class MetodoRutas {
     }
    
     public Vector BuscarRuta(String unaRuta){
+        
+               
         try {
             FileReader fr = new FileReader(".\\Rutas.txt");
             BufferedReader br = new BufferedReader(fr);
@@ -77,10 +79,12 @@ public class MetodoRutas {
             while ((d=br.readLine())!=null){
                 StringTokenizer dato = new StringTokenizer (d,"|");
                 Vector x = new Vector();
+                
                 while (dato.hasMoreTokens()){
                     x.addElement(dato.nextToken());
                     }
-                        String a = x.elementAt(1).toString();
+                        String a = x.elementAt(0).toString(); //cambio
+                        
                         if(a.equals(unaRuta)){
                             vPrincipal=x;
                             System.out.println(vPrincipal);     

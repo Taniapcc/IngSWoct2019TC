@@ -81,8 +81,7 @@ public class MetodoPasajero {
                     }
                         String a = x.elementAt(3).toString();
                         if(a.equals(cedulaP)){
-                          
-                            vPrincipal=x;
+                             vPrincipal=x;
                             System.out.println(vPrincipal);     
                 }
             }br.close();

@@ -8,6 +8,7 @@ import proyect_clases.Rutas;
 import proyect_metodos.MetodoBoleto;
 import proyect_metodos.MetodoPasajero;
 import proyect_metodos.MetodoRutas;
+import Validaciones.Validaciones;
 
 
 public class GUI_VentaDeBoletos extends javax.swing.JFrame {
@@ -16,6 +17,7 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
     MetodoBoleto boleto = new MetodoBoleto();
     Pasajero pasajero = new Pasajero();
     DefaultTableModel mdlTablaP;
+    Validaciones validar=new Validaciones ();
     
     public GUI_VentaDeBoletos() {
         initComponents();
@@ -71,9 +73,35 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
 
         jLabel3.setText("Buscar Cedula:");
 
+        txt_venta_busca_cedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_busca_cedulaKeyTyped(evt);
+            }
+        });
+
         txt_venta_apellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_venta_apellidoActionPerformed(evt);
+            }
+        });
+        txt_venta_apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_venta_apellidoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_apellidoKeyTyped(evt);
+            }
+        });
+
+        txt_venta_edad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_edadKeyTyped(evt);
+            }
+        });
+
+        txt_venta_tipoPasajero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_tipoPasajeroKeyTyped(evt);
             }
         });
 
@@ -84,6 +112,15 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         jLabel4.setText("Edad Pasajero:");
 
         jLabel5.setText("Categoria  Pasajero:");
+
+        txt_venta_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_venta_nombreKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_nombreKeyTyped(evt);
+            }
+        });
 
         btn_buscarr_pasajero.setText("Buscar");
         btn_buscarr_pasajero.addActionListener(new java.awt.event.ActionListener() {
@@ -153,12 +190,24 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        txt_busca_ruta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_busca_rutaKeyTyped(evt);
+            }
+        });
+
         jLabel7.setText("Buscar Ruta:");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("DATOS DE RUTA :");
 
         jLabel9.setText("Costo de Ruta");
+
+        txt_venta_costo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_costoKeyTyped(evt);
+            }
+        });
 
         jLabel10.setText("Fecha de viaje");
 
@@ -230,12 +279,29 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
 
         jLabel13.setText("Descuento");
 
+        txt_venta_numboleto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_numboletoKeyTyped(evt);
+            }
+        });
+
+        txt_venta_descuento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_descuentoKeyTyped(evt);
+            }
+        });
+
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("BOLETOS :");
 
         txt_venta_total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_venta_totalActionPerformed(evt);
+            }
+        });
+        txt_venta_total.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_venta_totalKeyTyped(evt);
             }
         });
 
@@ -451,6 +517,7 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         txt_venta_fecha.setText((String) v.elementAt(6));
         txt_venta_costo.setText((String) v.elementAt(4));
         txt_venta_hora.setText((String) v.elementAt (5));
+                 
         
     }//GEN-LAST:event_btn_buscar_rutaActionPerformed
 
@@ -468,6 +535,66 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         String str = Integer.toString(total);
         txt_venta_total.setText(str);
     }//GEN-LAST:event_btn_calcular_rutaActionPerformed
+
+    private void txt_venta_busca_cedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_busca_cedulaKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+       
+    }//GEN-LAST:event_txt_venta_busca_cedulaKeyTyped
+
+    private void txt_venta_nombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_nombreKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txt_venta_nombreKeyPressed
+
+    private void txt_venta_apellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_apellidoKeyPressed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txt_venta_apellidoKeyPressed
+
+    private void txt_venta_edadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_edadKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_venta_edadKeyTyped
+
+    private void txt_venta_nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_nombreKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_venta_nombreKeyTyped
+
+    private void txt_venta_apellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_apellidoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_venta_apellidoKeyTyped
+
+    private void txt_venta_tipoPasajeroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_tipoPasajeroKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarCaracteres(evt);
+    }//GEN-LAST:event_txt_venta_tipoPasajeroKeyTyped
+
+    private void txt_busca_rutaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_busca_rutaKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_busca_rutaKeyTyped
+
+    private void txt_venta_costoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_costoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_venta_costoKeyTyped
+
+    private void txt_venta_numboletoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_numboletoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_venta_numboletoKeyTyped
+
+    private void txt_venta_descuentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_descuentoKeyTyped
+        // TODO add your handling code here:
+        validar.ValidarNumeros(evt);
+    }//GEN-LAST:event_txt_venta_descuentoKeyTyped
+
+    private void txt_venta_totalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_totalKeyTyped
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txt_venta_totalKeyTyped
 
     /**
      * @param args the command line arguments

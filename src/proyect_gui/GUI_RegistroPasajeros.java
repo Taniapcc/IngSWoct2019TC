@@ -96,6 +96,12 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
             }
         });
 
+        txt_p_pasajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_p_pasajeroActionPerformed(evt);
+            }
+        });
+
         table_pasajero.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -113,6 +119,11 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        table_pasajero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_pasajeroMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(table_pasajero);
@@ -343,6 +354,34 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
         // TODO add your handling code here:
         Validaciones validar=new Validaciones ();
     }//GEN-LAST:event_txt_p_cedulaKeyTyped
+
+    private void table_pasajeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_pasajeroMouseClicked
+        // TODO add your handling code here: int row = (int)  table_usuario.getSelectedRow();
+        int row = (int)  table_pasajero.getSelectedRow();
+      String nombre_p = (String) table_pasajero.getModel().getValueAt(row, 0);
+        String apellido_p = (String) table_pasajero.getModel().getValueAt(row, 1);
+        String pasajero_p = (String) table_pasajero.getModel().getValueAt(row, 2);
+        String cedula_p= (String) table_pasajero.getModel().getValueAt(row, 3);
+        String edad_p = (String) table_pasajero.getModel().getValueAt(row, 4);
+        
+       
+        
+        txt_p_nombre.setText(nombre_p);
+        txt_p_apellido.setText(apellido_p);
+        txt_p_pasajero.setText(pasajero_p);
+        txt_p_cedula.setText(cedula_p);
+        txt_p_edad.setText(edad_p);
+        
+        
+              
+        
+        
+        
+    }//GEN-LAST:event_table_pasajeroMouseClicked
+
+    private void txt_p_pasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_p_pasajeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_p_pasajeroActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_p_actializar;

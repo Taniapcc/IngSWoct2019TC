@@ -88,6 +88,11 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        table_rutas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_rutasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table_rutas);
 
         btn_r_salir.setText("Salir");
@@ -393,6 +398,30 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
         // TODO add your handling code here:
         validar.ValidarCaracteres(evt);
     }//GEN-LAST:event_txt_r_destinoKeyTyped
+
+    private void table_rutasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_rutasMouseClicked
+        // TODO add your handling code here:
+        
+       int row = (int)  table_rutas.getSelectedRow();
+      String id_r = (String) table_rutas.getModel().getValueAt(row, 0);
+        String nombre_r = (String) table_rutas.getModel().getValueAt(row, 1);
+        String origen_r = (String) table_rutas.getModel().getValueAt(row, 2);
+        String destino_r= (String) table_rutas.getModel().getValueAt(row, 3);
+        String costo_r = (String) table_rutas.getModel().getValueAt(row, 4);
+        String hora_r = (String) table_rutas.getModel().getValueAt(row, 5);
+        String fecha_r = (String) table_rutas.getModel().getValueAt(row, 6);
+        
+         txt_r_id.setText(id_r);
+        txt_r_nombre.setText(nombre_r);
+        txt_r_origen.setText(origen_r);
+        txt_r_destino.setText(destino_r);
+        txt_r_costo.setText(costo_r);
+        txt_r_hora.setText(hora_r);
+        txt_r_fecha.setText(fecha_r);
+        
+       
+        
+    }//GEN-LAST:event_table_rutasMouseClicked
 
     /**
      * @param args the command line arguments
