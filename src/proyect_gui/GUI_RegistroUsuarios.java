@@ -323,11 +323,18 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
     private void btn_u_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_u_guardarActionPerformed
         // TODO add your handling code here:
-
+        
+    if (txt_u_id.getText()== null || txt_u_id.getText()=="" ){
+    
+         JOptionPane.showMessageDialog(null, "Ingrese Codigo","Error",JOptionPane.INFORMATION_MESSAGE);
+    }
+    else{
+        
+        JOptionPane.showMessageDialog(null, "Iiff","Error",JOptionPane.INFORMATION_MESSAGE);
         mdlTablaU = new DefaultTableModel();
-        
-        
-        
+       
+        System.out.print("x"+ txt_u_id.getText());
+                      
         int id_u = Integer.parseInt(txt_u_id.getText());
         String nombre_u = txt_u_nombre.getText();
         String apellido_u = txt_u_apellido.getText();
@@ -340,7 +347,7 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         usuario.setPassword(password_u);
         metodos.guardarUsuario(usuario);
         metodos.guardarArchivoUsuario(usuario);
-        table_usuario.setModel(metodos.listaUsuario());
+        table_usuario.setModel(metodos.listaUsuario());}
     }//GEN-LAST:event_btn_u_guardarActionPerformed
 
     private void btn_u_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_u_salirActionPerformed
