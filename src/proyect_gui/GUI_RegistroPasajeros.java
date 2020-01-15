@@ -318,6 +318,22 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
 
     private void btn_p_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_eliminarActionPerformed
               // Boton eliminar pasajeros en tabla:
+         int row = (int)  table_pasajero.getSelectedRow();
+      String nombre_p = (String) table_pasajero.getModel().getValueAt(row, 0);
+        String apellido_p = (String) table_pasajero.getModel().getValueAt(row, 1);
+        String pasajero_p = (String) table_pasajero.getModel().getValueAt(row, 2);
+        String cedula_p= (String) table_pasajero.getModel().getValueAt(row, 3);
+        String edad_p = (String) table_pasajero.getModel().getValueAt(row, 4);
+        
+               
+        txt_p_nombre.setText(nombre_p);
+        txt_p_apellido.setText(apellido_p);
+        txt_p_pasajero.setText(pasajero_p);
+        txt_p_cedula.setText(cedula_p);
+        txt_p_edad.setText(edad_p);
+        
+        
+        
     }//GEN-LAST:event_btn_p_eliminarActionPerformed
    
     private void btn_p_nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_nuevoActionPerformed

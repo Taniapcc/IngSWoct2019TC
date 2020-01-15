@@ -373,8 +373,20 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_u_eliminarActionPerformed
 
     private void btn_u_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_u_editarActionPerformed
-       
+    
+         int row = (int)  table_usuario.getSelectedRow();
+        String id_u = (String) table_usuario.getModel().getValueAt(row, 0);
+        String nombre_u = (String) table_usuario.getModel().getValueAt(row, 1);
+        String apellido_u = (String) table_usuario.getModel().getValueAt(row, 2);
+        String user_u = (String) table_usuario.getModel().getValueAt(row, 3);
+        String password_u = (String) table_usuario.getModel().getValueAt(row, 4);
         
+       txt_u_id.setText(id_u);
+        txt_u_nombre.setText(nombre_u);
+        txt_u_apellido.setText(apellido_u);
+        txt_u_user.setText(user_u);
+        txt_u_password.setText(password_u);        
+              
         
     }//GEN-LAST:event_btn_u_editarActionPerformed
 

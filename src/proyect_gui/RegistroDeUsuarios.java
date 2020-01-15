@@ -105,6 +105,11 @@ public class RegistroDeUsuarios extends javax.swing.JFrame {
                 "NOMBRE", "APELLIDO", "USERNAME", "PASSWORD"
             }
         ));
+        tabla_registro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabla_registroMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tabla_registro);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -217,6 +222,10 @@ public class RegistroDeUsuarios extends javax.swing.JFrame {
     private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_nombreActionPerformed
+
+    private void tabla_registroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_registroMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabla_registroMouseClicked
 
     /**
      * @param args the command line arguments

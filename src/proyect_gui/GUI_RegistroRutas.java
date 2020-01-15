@@ -414,8 +414,26 @@ public class GUI_RegistroRutas extends javax.swing.JFrame {
 
     private void btn_r_actializarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_r_actializarActionPerformed
         // Carga los datos del archivo de texto con la base de datos de pasajeros:
-        table_rutas.setModel(metodos.listaRutas());
+      // table_rutas.setModel(metodos.listaRutas());
         
+        int row = (int)  table_rutas.getSelectedRow();
+      String id_r = (String) table_rutas.getModel().getValueAt(row, 0);
+        String nombre_r = (String) table_rutas.getModel().getValueAt(row, 1);
+        String origen_r = (String) table_rutas.getModel().getValueAt(row, 2);
+        String destino_r= (String) table_rutas.getModel().getValueAt(row, 3);
+        String costo_r = (String) table_rutas.getModel().getValueAt(row, 4);
+        String hora_r = (String) table_rutas.getModel().getValueAt(row, 5);
+        String fecha_r = (String) table_rutas.getModel().getValueAt(row, 6);
+        
+        txt_r_id.setText(id_r);
+        txt_r_nombre.setText(nombre_r);
+        txt_r_origen.setText(origen_r);
+        txt_r_destino.setText(destino_r);
+        txt_r_costo.setText(costo_r);
+        txt_r_hora.setText(hora_r);
+        txt_r_fecha.setText(fecha_r);
+        
+       
     }//GEN-LAST:event_btn_r_actializarActionPerformed
 
     private void txt_r_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_r_idKeyTyped
