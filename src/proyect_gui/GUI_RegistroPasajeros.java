@@ -72,6 +72,16 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
 
         jLabel5.setText("Tipo Pasajero");
 
+        txt_p_nombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_p_nombreFocusLost(evt);
+            }
+        });
+        txt_p_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_p_nombreActionPerformed(evt);
+            }
+        });
         txt_p_nombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_p_nombreKeyTyped(evt);
@@ -398,6 +408,15 @@ public class GUI_RegistroPasajeros extends javax.swing.JFrame {
     private void txt_p_pasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_p_pasajeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_p_pasajeroActionPerformed
+
+    private void txt_p_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_p_nombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_p_nombreActionPerformed
+
+    private void txt_p_nombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_p_nombreFocusLost
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txt_p_nombreFocusLost
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_p_actializar;

@@ -221,6 +221,9 @@ public class RegistroDeUsuarios extends javax.swing.JFrame {
 
     private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_txt_nombreActionPerformed
 
     private void tabla_registroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_registroMouseClicked

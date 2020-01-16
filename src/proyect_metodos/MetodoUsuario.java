@@ -19,7 +19,7 @@ public class MetodoUsuario {
     Vector v1 = new Vector();
 
     public void guardarUsuario(Usuario unUsuario) {
-        vUsuario.addElement(unUsuario);
+        vUsuario.addElement(unUsuario);       
     }
 
     public void guardarArchivoUsuario(Usuario usuario){

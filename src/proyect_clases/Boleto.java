@@ -6,16 +6,20 @@ public class Boleto {
     private String  fecha_boleto;
     private String  hora_boleto;
     private int     costo_boleto;
+    private String  cedula;
+    private String  idRuta;
     
     public Boleto(){
     
     }
 
-    public Boleto(int numero_boleto, String fecha_boleto, String hora_boleto, int costo_boleto) {
+    public Boleto(int numero_boleto, String fecha_boleto, String hora_boleto, int costo_boleto, String cedula, String idRuta) {
         this.numero_boleto = numero_boleto;
         this.fecha_boleto = fecha_boleto;
         this.hora_boleto = hora_boleto;
         this.costo_boleto = costo_boleto;
+        this.cedula = cedula;
+        this.idRuta = idRuta;
     }
 
     public int getNumero_boleto() {
@@ -50,6 +54,22 @@ public class Boleto {
         this.costo_boleto = costo_boleto;
     }
     
+      public String getCedula() {
+        return cedula;
+    }
+      
+      public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+       public String getIdRuta() {
+        return idRuta;
+    }
+      
+      public void setIdRuta(String idRuta) {
+        this.idRuta = idRuta;
+    }
+
+   
     
     
 }

@@ -126,6 +126,11 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
 
         jLabel3.setText("Clave :");
 
+        txt_u_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_u_idActionPerformed(evt);
+            }
+        });
         txt_u_id.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_u_idKeyTyped(evt);
@@ -330,7 +335,7 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
     }
     else{
         
-        JOptionPane.showMessageDialog(null, "Iiff","Error",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Información","Grabando",JOptionPane.INFORMATION_MESSAGE);
         mdlTablaU = new DefaultTableModel();
        
         System.out.print("x"+ txt_u_id.getText());
@@ -430,6 +435,10 @@ public class GUI_RegistroUsuarios extends javax.swing.JFrame {
         txt_u_password.setText(password_u);
         
     }//GEN-LAST:event_table_usuarioMouseClicked
+
+    private void txt_u_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_u_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_u_idActionPerformed
 
     /**
      * @param args the command line arguments

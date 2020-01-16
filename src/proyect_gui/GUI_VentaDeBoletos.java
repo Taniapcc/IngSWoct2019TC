@@ -9,12 +9,17 @@ import proyect_metodos.MetodoBoleto;
 import proyect_metodos.MetodoPasajero;
 import proyect_metodos.MetodoRutas;
 import Validaciones.Validaciones;
+import proyect_clases.Boleto;
 
 
 public class GUI_VentaDeBoletos extends javax.swing.JFrame {
+    
+    Boleto boleto = new Boleto();
+    MetodoBoleto metodos = new MetodoBoleto ();
+    
     MetodoPasajero buscarP = new MetodoPasajero ();
     MetodoRutas buscarR = new MetodoRutas ();
-    MetodoBoleto boleto = new MetodoBoleto();
+   // MetodoBoleto boleto = new MetodoBoleto();
     Pasajero pasajero = new Pasajero();
     DefaultTableModel mdlTablaP;
     Validaciones validar=new Validaciones ();
@@ -73,6 +78,11 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
 
         jLabel3.setText("Buscar Cedula:");
 
+        txt_venta_busca_cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_venta_busca_cedulaActionPerformed(evt);
+            }
+        });
         txt_venta_busca_cedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_venta_busca_cedulaKeyTyped(evt);
@@ -474,15 +484,16 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         Vector v = new Vector();
         String cedula = txt_venta_busca_cedula.getText();
         v = buscarP.BuscarPasajero(cedula);
+        if (v.elementAt(0) !=  null){
         txt_venta_nombre.setText((String) v.elementAt(0));
         txt_venta_apellido.setText((String) v.elementAt(1));
         txt_venta_edad.setText((String) v.elementAt(2));
-        txt_venta_tipoPasajero.setText((String) v.elementAt(4));
+        txt_venta_tipoPasajero.setText((String) v.elementAt(4));}
     }//GEN-LAST:event_btn_buscarr_pasajeroActionPerformed
 
     private void btn_p_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_p_guardarActionPerformed
         // TODO add your handling code here:
-
+                  
         String cedulaP_b = txt_venta_busca_cedula.getText();
         String nombreP_b = txt_venta_nombre.getText();
         String apellidoP_b = txt_venta_apellido.getText();
@@ -497,7 +508,18 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         int numBoletosB = Integer.parseInt(txt_venta_numboleto.getText());
         int descuentoB = Integer.parseInt(txt_venta_descuento.getText());
         int totalB = Integer.parseInt(txt_venta_total.getText());
-            
+        
+       //boleto.setId_usuario(id_u);
+        boleto.setCedula(cedulaP_b);
+        boleto.setFecha_boleto(fechaR_b);
+        boleto.setHora_boleto(horaR_b);
+        boleto.setNumero_boleto(numBoletosB);
+        boleto.setCosto_boleto(totalB);
+        boleto.setIdRuta(rutaR_b);
+        metodos.guardarBoleto(boleto);
+        metodos.guardarArchivoBoleto(boleto);
+        
+                 
         // FALTA CREAR BOLETOS E GENERAR ARCHIVO TXT
         //boleto.setNombre_pasajero(nombreP_b);
         
@@ -538,7 +560,7 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
 
     private void txt_venta_busca_cedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_venta_busca_cedulaKeyTyped
         // TODO add your handling code here:
-        validar.ValidarNumeros(evt);
+        //validar.ValidarNumeros(evt);
        
     }//GEN-LAST:event_txt_venta_busca_cedulaKeyTyped
 
@@ -595,6 +617,10 @@ public class GUI_VentaDeBoletos extends javax.swing.JFrame {
         // TODO add your handling code here:
        
     }//GEN-LAST:event_txt_venta_totalKeyTyped
+
+    private void txt_venta_busca_cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_venta_busca_cedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_venta_busca_cedulaActionPerformed
 
     /**
      * @param args the command line arguments

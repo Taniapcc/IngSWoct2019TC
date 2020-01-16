@@ -100,13 +100,6 @@ public class GUI_Principal extends javax.swing.JFrame {
             }
         });
 
-        jDesktopPane1.setLayer(registroUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(registroRutas, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(registroPasajero, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(ventaBoletos, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(reporteVentas, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(reporteAcceso, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
@@ -143,6 +136,12 @@ public class GUI_Principal extends javax.swing.JFrame {
                     .addComponent(reporteAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
+        jDesktopPane1.setLayer(registroUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(registroRutas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(registroPasajero, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(ventaBoletos, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(reporteVentas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(reporteAcceso, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu2.setText("Menu Principal");
 

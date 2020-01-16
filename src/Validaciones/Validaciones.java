@@ -2,6 +2,7 @@
 package Validaciones;
 
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.text.AttributeSet;
@@ -47,6 +48,8 @@ public class Validaciones extends PlainDocument {
         }super.insertString(arg0, arg1, arg2);
         
     } 
+        
+     
          
     }
 

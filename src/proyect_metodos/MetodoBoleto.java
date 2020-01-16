@@ -18,6 +18,9 @@ import proyect_gui.GUI_Principal;
 public class MetodoBoleto {
     Vector vPrincipal = new Vector();
     
+    
+    Vector v1 = new Vector();
+    
     public void crearBoleto(Boleto unBoleto) {
         
         //FALTA
@@ -26,16 +29,35 @@ public class MetodoBoleto {
     
     public void guardarBoleto(Boleto unBoleto) {
         vPrincipal.addElement(unBoleto);
+        
+        
+        
     }
     
     //guardar archivo txt
-    public void guardarArchivoBoleto(Pasajero pasajero){
+    public void guardarArchivoBoleto(Boleto boleto){
         
-        //FALTA
+      try {
+            FileWriter fw = new FileWriter (".\\Boleto.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            pw.print(boleto.getNumero_boleto());
+            pw.print("|"+boleto.getFecha_boleto());
+            pw.print("|"+boleto.getHora_boleto());
+            pw.print("|"+boleto.getCosto_boleto());
+            pw.println("|"+boleto.getCedula());
+            pw.println("|"+boleto.getIdRuta());
+            pw.close();
+        } catch (IOException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
         
     }
 
     public void BuscarBoleto(Usuario unUsuario){
+        
+        
+        
       
         //FALTA
         
